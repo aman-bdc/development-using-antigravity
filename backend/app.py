@@ -173,9 +173,15 @@ if os.path.exists(FRONTEND_DIST):
         raise HTTPException(status_code=404, detail="File not found")
 
 
+@app.on_event("startup")
+def on_startup():
+    # Auto-load bundled samples on startup so first-time users have data ready immediately
+    load_sample_datasets()
+
+
 if __name__ == "__main__":
     import uvicorn
-    # Auto-load samples on startup so first-time users have data ready immediately
-    load_sample_datasets()
     port = int(os.environ.get("PORT", 8080))
-    uvicorn.run(app, host="127.0.0.1", port=port)
+    host = os.environ.get("HOST", "127.0.0.1")
+    uvicorn.run(app, host=host, port=port)
+

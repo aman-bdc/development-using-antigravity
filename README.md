@@ -97,5 +97,43 @@ development-using-antigravity/
 │   ├── vite.config.ts
 │   └── tailwind.config.js
 ├── run.py                     # Single-command launcher
+├── Dockerfile                 # Multi-stage production container build
+├── .dockerignore              # Docker build context exclusions
+├── .github/workflows/
+│   └── deploy-gcp-cloudrun.yml # GitHub Actions CI/CD to Google Cloud Run
 └── README.md
 ```
+
+---
+
+## Deploy to Google Cloud Run (GitHub Actions)
+
+This repository includes an automated CI/CD pipeline ([`.github/workflows/deploy-gcp-cloudrun.yml`](.github/workflows/deploy-gcp-cloudrun.yml)) that builds the multi-stage Docker container and deploys it directly to **Google Cloud Run**.
+
+### 1. Prerequisites (GCP Setup)
+1. Ensure the required APIs are enabled in your Google Cloud Project:
+   ```bash
+   gcloud services enable run.googleapis.com containerregistry.googleapis.com
+   ```
+2. Your Service Account must have the following IAM roles:
+   - **Cloud Run Admin** (`roles/run.admin`): To deploy and manage Cloud Run revisions.
+   - **Storage Admin** (`roles/storage.admin`): To push container images to Google Container Registry (`gcr.io`).
+   - **Service Account User** (`roles/iam.serviceAccountUser`): To run the service as the Compute Engine service account.
+
+### 2. Configure GitHub Secrets
+In your GitHub repository, navigate to **Settings** → **Secrets and variables** → **Actions** → **New repository secret** and add:
+
+| Secret Name | Required | Description |
+| :--- | :--- | :--- |
+| `GCP_SA_KEY` | **Yes** | The full raw JSON contents of your Google Cloud Service Account key file. |
+| `GCP_PROJECT_ID` | *Optional* | Your GCP Project ID (e.g. `my-project-12345`). If omitted, it is automatically extracted from `GCP_SA_KEY`. |
+| `GEMINI_API_KEY` | *Optional* | Gemini API Key if you want Gemini to be active in the cloud environment without manual client entry. |
+
+*(Optional)* You can also set a repository variable `GCP_REGION` under **Variables** (defaults to `us-central1`).
+
+### 3. Trigger Deployment
+- **Automatic**: Push any changes to the `main` branch.
+- **Manual**: Go to **Actions** → **Deploy to Google Cloud Run** → click **Run workflow**.
+
+Once complete, the workflow will output the public live URL of your application in the GitHub Actions summary!
+
