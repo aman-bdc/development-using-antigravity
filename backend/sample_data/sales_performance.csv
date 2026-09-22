@@ -1,0 +1,13 @@
+Region,Quarter,Revenue,New_Clients,Churn_Rate,Top_Product
+North America,Q1 2024,450000,34,0.04,Cloud Infrastructure
+North America,Q2 2024,520000,42,0.03,Data Platform
+North America,Q3 2024,490000,38,0.05,AI Suite
+Europe,Q1 2024,310000,22,0.06,Cloud Infrastructure
+Europe,Q2 2024,380000,29,0.04,Security Suite
+Europe,Q3 2024,410000,35,0.03,AI Suite
+Asia Pacific,Q1 2024,280000,45,0.08,Data Platform
+Asia Pacific,Q2 2024,340000,52,0.07,AI Suite
+Asia Pacific,Q3 2024,395000,61,0.05,AI Suite
+Latin America,Q1 2024,120000,15,0.09,Security Suite
+Latin America,Q2 2024,145000,18,0.08,Cloud Infrastructure
+Latin America,Q3 2024,160000,20,0.07,Data Platform

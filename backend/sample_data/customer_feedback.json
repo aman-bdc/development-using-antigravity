@@ -1,0 +1,47 @@
+[
+  {
+    "id": "FB-101",
+    "customer": "Apex Global Corp",
+    "sentiment": "Positive",
+    "rating": 5,
+    "topic": "Platform Speed",
+    "comment": "The ingestion speed of the enterprise data platform has reduced our overnight batch times by over 60%. Absolutely critical for morning reporting.",
+    "date": "2024-03-12"
+  },
+  {
+    "id": "FB-102",
+    "customer": "Vanguard Media",
+    "sentiment": "Neutral",
+    "rating": 3,
+    "topic": "Documentation",
+    "comment": "RAG search results are accurate, but the API documentation for custom webhook integrations could be improved with more Python examples.",
+    "date": "2024-04-05"
+  },
+  {
+    "id": "FB-103",
+    "customer": "Nordic Analytics",
+    "sentiment": "Positive",
+    "rating": 5,
+    "topic": "AI Accuracy",
+    "comment": "The grounded citation feature gives our compliance team complete confidence in the generative summaries. No hallucinations observed.",
+    "date": "2024-05-19"
+  },
+  {
+    "id": "FB-104",
+    "customer": "Horizon Retail",
+    "sentiment": "Negative",
+    "rating": 2,
+    "topic": "Support SLA",
+    "comment": "Experienced an incident during the regional cutover and took 4 hours to get an engineer on call. Resolution was solid once reached.",
+    "date": "2024-06-02"
+  },
+  {
+    "id": "FB-105",
+    "customer": "Crestview Financial",
+    "sentiment": "Positive",
+    "rating": 4,
+    "topic": "Security",
+    "comment": "SOC-2 compliance and RBAC access controls passed our internal audit with zero flags. Onboarding took less than a week.",
+    "date": "2024-06-25"
+  }
+]
