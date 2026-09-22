@@ -8,7 +8,8 @@ on:
 
 env:
   SERVICE_NAME: antigravity-data-chatbot
-  REGION: ${{ vars.GCP_REGION || 'us-central1' }}
+  REGION: us-central1
+  AR_REPO: antigravity-data-chatbot
 
 jobs:
   build-and-deploy:
@@ -29,20 +30,23 @@ jobs:
       - name: Set up Cloud SDK
         uses: google-github-actions/setup-gcloud@v2
 
-      - name: Configure Docker authentication
+      - name: Configure Docker for Artifact Registry
         run: |
-          gcloud auth configure-docker --quiet
+          gcloud auth configure-docker ${{ env.REGION }}-docker.pkg.dev --quiet
 
       - name: Build and Push Docker image
         run: |
           PROJECT_ID="${{ secrets.GCP_PROJECT_ID }}"
           if [ -z "$PROJECT_ID" ]; then
-            # Extract project_id from service account credentials if not set as secret
+            # Default to bdc-trainings or project_id from SA credentials
             PROJECT_ID="${{ steps.auth.outputs.project_id }}"
+            if [ -z "$PROJECT_ID" ]; then
+              PROJECT_ID="bdc-trainings"
+            fi
           fi
           
-          IMAGE_TAG="gcr.io/${PROJECT_ID}/${{ env.SERVICE_NAME }}:${{ github.sha }}"
-          IMAGE_LATEST="gcr.io/${PROJECT_ID}/${{ env.SERVICE_NAME }}:latest"
+          IMAGE_TAG="${{ env.REGION }}-docker.pkg.dev/${PROJECT_ID}/${{ env.AR_REPO }}/${{ env.SERVICE_NAME }}:${{ github.sha }}"
+          IMAGE_LATEST="${{ env.REGION }}-docker.pkg.dev/${PROJECT_ID}/${{ env.AR_REPO }}/${{ env.SERVICE_NAME }}:latest"
           
           echo "IMAGE_TAG=$IMAGE_TAG" >> $GITHUB_ENV
           echo "IMAGE_LATEST=$IMAGE_LATEST" >> $GITHUB_ENV
@@ -50,7 +54,7 @@ jobs:
           echo "Building image: $IMAGE_TAG..."
           docker build -t "$IMAGE_TAG" -t "$IMAGE_LATEST" .
           
-          echo "Pushing image to Container Registry..."
+          echo "Pushing image to Artifact Registry..."
           docker push "$IMAGE_TAG"
           docker push "$IMAGE_LATEST"
 
@@ -73,5 +77,5 @@ jobs:
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "- **Service Name**: \`${{ env.SERVICE_NAME }}\`" >> $GITHUB_STEP_SUMMARY
           echo "- **Region**: \`${{ env.REGION }}\`" >> $GITHUB_STEP_SUMMARY
-          echo "- **Container Image**: \`${{ env.IMAGE_TAG }}\`" >> $GITHUB_STEP_SUMMARY
+          echo "- **Artifact Registry Image**: \`${{ env.IMAGE_TAG }}\`" >> $GITHUB_STEP_SUMMARY
           echo "- **Live Application URL**: [${{ steps.deploy.outputs.url }}](${{ steps.deploy.outputs.url }})" >> $GITHUB_STEP_SUMMARY

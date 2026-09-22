@@ -113,11 +113,11 @@ This repository includes an automated CI/CD pipeline ([`.github/workflows/deploy
 ### 1. Prerequisites (GCP Setup)
 1. Ensure the required APIs are enabled in your Google Cloud Project:
    ```bash
-   gcloud services enable run.googleapis.com containerregistry.googleapis.com
+   gcloud services enable run.googleapis.com artifactregistry.googleapis.com
    ```
 2. Your Service Account must have the following IAM roles:
    - **Cloud Run Admin** (`roles/run.admin`): To deploy and manage Cloud Run revisions.
-   - **Storage Admin** (`roles/storage.admin`): To push container images to Google Container Registry (`gcr.io`).
+   - **Artifact Registry Writer** (`roles/artifactregistry.writer` or `roles/artifactregistry.admin`): To push container images to Google Artifact Registry (`us-central1-docker.pkg.dev/bdc-trainings/antigravity-data-chatbot`).
    - **Service Account User** (`roles/iam.serviceAccountUser`): To run the service as the Compute Engine service account.
 
 ### 2. Configure GitHub Secrets
