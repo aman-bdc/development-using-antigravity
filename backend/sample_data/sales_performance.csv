@@ -1,13 +1,25 @@
-Region,Quarter,Revenue,New_Clients,Churn_Rate,Top_Product
-North America,Q1 2024,450000,34,0.04,Cloud Infrastructure
-North America,Q2 2024,520000,42,0.03,Data Platform
-North America,Q3 2024,490000,38,0.05,AI Suite
-Europe,Q1 2024,310000,22,0.06,Cloud Infrastructure
-Europe,Q2 2024,380000,29,0.04,Security Suite
-Europe,Q3 2024,410000,35,0.03,AI Suite
-Asia Pacific,Q1 2024,280000,45,0.08,Data Platform
-Asia Pacific,Q2 2024,340000,52,0.07,AI Suite
-Asia Pacific,Q3 2024,395000,61,0.05,AI Suite
-Latin America,Q1 2024,120000,15,0.09,Security Suite
-Latin America,Q2 2024,145000,18,0.08,Cloud Infrastructure
-Latin America,Q3 2024,160000,20,0.07,Data Platform
+date,region,product_category,units_sold,unit_price,revenue,marketing_spend,profit_margin_pct,sales_rep
+2024-01-15,North America,Enterprise Cloud,45,1200,54000,8500,28.4,Elena Vance
+2024-01-20,Europe,Enterprise Cloud,32,1200,38400,6200,27.1,Marcus Aurel
+2024-02-05,Asia Pacific,Security Suite,78,650,50700,7400,33.2,Hana Tanaka
+2024-02-18,North America,Security Suite,95,650,61750,9100,34.0,Elena Vance
+2024-03-10,Europe,Analytics Pro,60,850,51000,7800,25.5,Marcus Aurel
+2024-03-25,Latin America,Analytics Pro,28,850,23800,4100,22.8,Sofia Morales
+2024-04-12,North America,Enterprise Cloud,52,1250,65000,9800,29.1,Elena Vance
+2024-04-28,Asia Pacific,Enterprise Cloud,41,1250,51250,8300,28.0,Hana Tanaka
+2024-05-14,Europe,Security Suite,84,680,57120,7900,31.5,Marcus Aurel
+2024-05-30,Latin America,Security Suite,39,680,26520,4300,30.2,Sofia Morales
+2024-06-11,North America,Analytics Pro,80,880,70400,10500,26.4,Elena Vance
+2024-06-25,Asia Pacific,Analytics Pro,72,880,63360,9200,27.5,Hana Tanaka
+2024-07-08,Europe,Enterprise Cloud,48,1280,61440,8900,28.6,Marcus Aurel
+2024-07-22,North America,Security Suite,110,690,75900,10800,35.2,Elena Vance
+2024-08-04,Latin America,Enterprise Cloud,25,1280,32000,5100,26.8,Sofia Morales
+2024-08-19,Asia Pacific,Security Suite,92,690,63480,8700,32.8,Hana Tanaka
+2024-09-02,Europe,Analytics Pro,67,900,60300,8600,26.1,Marcus Aurel
+2024-09-18,North America,Analytics Pro,91,900,81900,11200,27.3,Elena Vance
+2024-10-05,Asia Pacific,Enterprise Cloud,55,1300,71500,9900,29.4,Hana Tanaka
+2024-10-21,Latin America,Analytics Pro,34,900,30600,4800,23.5,Sofia Morales
+2024-11-12,North America,Enterprise Cloud,68,1320,89760,12100,30.5,Elena Vance
+2024-11-28,Europe,Security Suite,98,710,69580,9400,33.0,Marcus Aurel
+2024-12-10,Asia Pacific,Analytics Pro,85,920,78200,10400,28.2,Hana Tanaka
+2024-12-22,North America,Security Suite,125,710,88750,11900,35.8,Elena Vance

@@ -1,47 +1,68 @@
 [
   {
-    "id": "FB-101",
-    "customer": "Apex Global Corp",
-    "sentiment": "Positive",
+    "id": "FB-1001",
+    "customer_name": "Apex Global Logistics",
+    "region": "North America",
+    "product": "Enterprise Cloud",
     "rating": 5,
-    "topic": "Platform Speed",
-    "comment": "The ingestion speed of the enterprise data platform has reduced our overnight batch times by over 60%. Absolutely critical for morning reporting.",
-    "date": "2024-03-12"
-  },
-  {
-    "id": "FB-102",
-    "customer": "Vanguard Media",
-    "sentiment": "Neutral",
-    "rating": 3,
-    "topic": "Documentation",
-    "comment": "RAG search results are accurate, but the API documentation for custom webhook integrations could be improved with more Python examples.",
-    "date": "2024-04-05"
-  },
-  {
-    "id": "FB-103",
-    "customer": "Nordic Analytics",
     "sentiment": "Positive",
-    "rating": 5,
-    "topic": "AI Accuracy",
-    "comment": "The grounded citation feature gives our compliance team complete confidence in the generative summaries. No hallucinations observed.",
-    "date": "2024-05-19"
+    "nps_category": "Promoter",
+    "comment": "The uptime and instant auto-scaling during our Black Friday peak surpassed expectations. Response time was under 10 minutes.",
+    "reported_date": "2024-11-29"
   },
   {
-    "id": "FB-104",
-    "customer": "Horizon Retail",
-    "sentiment": "Negative",
-    "rating": 2,
-    "topic": "Support SLA",
-    "comment": "Experienced an incident during the regional cutover and took 4 hours to get an engineer on call. Resolution was solid once reached.",
-    "date": "2024-06-02"
-  },
-  {
-    "id": "FB-105",
-    "customer": "Crestview Financial",
-    "sentiment": "Positive",
+    "id": "FB-1002",
+    "customer_name": "Nordic FinTech Solutions",
+    "region": "Europe",
+    "product": "Security Suite",
     "rating": 4,
-    "topic": "Security",
-    "comment": "SOC-2 compliance and RBAC access controls passed our internal audit with zero flags. Onboarding took less than a week.",
-    "date": "2024-06-25"
+    "sentiment": "Positive",
+    "nps_category": "Promoter",
+    "comment": "Zero-trust enforcement is seamless with hardware keys. We would appreciate more granular permission audits for junior developers.",
+    "reported_date": "2024-10-14"
+  },
+  {
+    "id": "FB-1003",
+    "customer_name": "Sakura Retail Systems",
+    "region": "Asia Pacific",
+    "product": "Analytics Pro",
+    "rating": 5,
+    "sentiment": "Positive",
+    "nps_category": "Promoter",
+    "comment": "Real-time dashboard renders large datasets with zero lag. Predictive forecasting helped optimize our inventory by 22%.",
+    "reported_date": "2024-12-05"
+  },
+  {
+    "id": "FB-1004",
+    "customer_name": "Horizon Health Networks",
+    "region": "North America",
+    "product": "Security Suite",
+    "rating": 3,
+    "sentiment": "Neutral",
+    "nps_category": "Passive",
+    "comment": "Strong compliance adherence, but the initial onboarding workflow took three weeks longer than promised due to credential verification.",
+    "reported_date": "2024-09-19"
+  },
+  {
+    "id": "FB-1005",
+    "customer_name": "Rio BioTech Lab",
+    "region": "Latin America",
+    "product": "Enterprise Cloud",
+    "rating": 4,
+    "sentiment": "Positive",
+    "nps_category": "Promoter",
+    "comment": "Great regional server latency. Pricing is very competitive compared to legacy hyperscalers.",
+    "reported_date": "2024-08-22"
+  },
+  {
+    "id": "FB-1006",
+    "customer_name": "Vanguard Media Group",
+    "region": "Europe",
+    "product": "Analytics Pro",
+    "rating": 2,
+    "sentiment": "Negative",
+    "nps_category": "Detractor",
+    "comment": "Documentation for custom SQL connectors was outdated. Customer support resolved it after 24 hours, but SLA specifies under 8 hours.",
+    "reported_date": "2024-07-15"
   }
 ]

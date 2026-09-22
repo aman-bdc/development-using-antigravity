@@ -70,7 +70,7 @@ class ChatAgent:
                 )
 
         # Check API key from argument or environment
-        effective_key = api_key or os.environ.get("GEMINI_API_KEY") or os.environ.get("GOOGLE_KEY") or os.environ.get("GOOGLE_API_KEY")
+        effective_key = api_key or os.environ.get("GEMINI_API_KEY") or os.environ.get("GOOGLE_API_KEY")
 
         if effective_key:
             try:
